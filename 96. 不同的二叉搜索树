@@ -1,0 +1,18 @@
+(https://leetcode-cn.com/problems/unique-binary-search-trees/)
+
+
+```
+class Solution {
+    func numTrees(_ n: Int) -> Int {
+        if n == 0 {
+            return 1
+        } else {
+            var sum = 0
+            for index in 0 ..< n {
+                sum += (numTrees(index) * numTrees(n - 1 - index))
+            }
+            return sum
+        }
+    }
+}
+```
